@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Калькулятор</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h2>Калькулятор стоимости авто</h2>
+        </div>
+        <form action="#" name="form">
+            <div class="brand-list">
+                <p>Выберите марку авто:</p> 
+                <label for="brands"></label> 
+                <select id="brands" onChange="onBrandChange()">
+                    <option value="reno">Renault</option>
+                    <option value="opel">Opel</option>
+                    <option value="mazda">Mazda</option>
+                    <option value="jaguar">Jaguar</option>
+                </select>
+            </div>
+
+            <div class="invisible" id="model-list">
+                <label for="model">Выберите модель авто:</label>
+                <select id="model">
+                </select>
+                <!-- <p>Выберите модель авто:</p> 
+                <label for="model"></label>  
+                    <select id="model">
+                        <option value="Clio">Clio</option>
+                        <option value="Duster">Duster</option>
+                        <option value="Zafira">Zafira</option>
+                        <option value="Crossland">Crossland</option>
+                        <option value="6">6</option>
+                        <option value="CX-5">CX-5</option>
+                        <option value="F-type">F-type</option>
+                        <option value="E-Race">E-Race</option>
+                    </select> -->
+            </div>
+
+            <div class="fuel-list" id="fuel">
+                <label for="fuel"></label>  
+                <p>Выберите тип топлива:</p> 
+                <input type="checkbox" value="petrol" name="fuel"/>Бензин<br>
+                <input type="checkbox" value="diesel" name="fuel"/>Дизель<br>
+                <input type="checkbox" value="gas" name="fuel"/>Газ<br>
+                <input type="checkbox" value="elec" name="fuel"/>Электричество
+            </div>
+            <br/>
+
+            <div class="capacity-list">
+                <label for="capacity">Укажите объем двигателя, л</label><br>
+                <input type="number" id="capacity" value="1.1"/>
+            </div>
+
+            <div class="condition-list">
+                <p>Состояние авто: </p>
+                <label for="newOld"></label> 
+                Новое<input id="newOld" type="radio" name="condition"/><br>
+                Подержанное<input id="newOld" type="radio" name="condition"/>
+            </div>
+
+            <div class="invisible" id="owner">
+                <p>Количество владельцев: </p>
+                <label for="owner"></label> 
+                <div id="owner">
+                    <input type="radio" name="owner"/>1<br>
+                    <input type="radio" name="owner"/>2<br>
+                    <input type="radio" name="owner"/>Более 3-х
+                </div>
+            </div>
+            <br/>
+
+            <div class="totalprice">
+                <button class="button" onclick="total()">Посчитать</button>
+                <div class="finalprice"></div>
+            </div>
+        </div>
+        </form>
+        
+
+    <script src="index.js"></script>
+</body>
+</html>
