@@ -60,23 +60,23 @@
             <div class="condition-list">
                 <p>Состояние авто: </p>
                 <label for="newOld"></label> 
-                Новое<input id="newOld" type="radio" name="condition"/><br>
-                Подержанное<input id="newOld" type="radio" name="condition"/>
+                Новое<input id="newOld" type="radio" name="condition" value="new" onclick="onNewClick()"/><br>
+                Подержанное<input id="newOld" type="radio" name="condition" value="old" onclick="onOldClick()"/>
             </div>
 
             <div class="invisible" id="owner">
                 <p>Количество владельцев: </p>
                 <label for="owner"></label> 
                 <div id="owner">
-                    <input type="radio" name="owner"/>1<br>
-                    <input type="radio" name="owner"/>2<br>
-                    <input type="radio" name="owner"/>Более 3-х
+                    <input type="radio" name="owner" value="1"/>1<br>
+                    <input type="radio" name="owner" value="2"/>2<br>
+                    <input type="radio" name="owner" value="3"/>Более 3-х
                 </div>
             </div>
             <br/>
 
             <div class="totalprice">
-                <button class="button" onclick="total()">Посчитать</button>
+                <button class="button" onclick="onCount()">Посчитать</button>
                 <div class="finalprice"></div>
             </div>
         </div>

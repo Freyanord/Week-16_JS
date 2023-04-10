@@ -17,6 +17,8 @@ const JaguarModels = [
 
 const brand = document.getElementById('brands');
 const modelSelect = document.getElementById('model');
+let sumPrice = 0;
+
 const renderModel = (array) => {
     let modelHTML = '';
     array.forEach((model) => {
@@ -29,21 +31,37 @@ const renderModel = (array) => {
 const onBrandChange = () => {
     const indexOfChosen = brand.selectedIndex;
     const chosenBrand = brand.options[indexOfChosen].innerText;
-    
+    const brandSum = 0;
     switch (chosenBrand) {
         case 'Renault':
-            renderModel(RenaultModels)
+            renderModel(RenaultModels);
+            brandSum = Number(brand.options[indexOfChosen].value);
             break;
         case 'Opel':
-            renderModel(OpelModels)
+            renderModel(OpelModels);
             break;  
         case 'Mazda':
-            renderModel(MazdaModels)
+            renderModel(MazdaModels);
             break; 
         case 'Jaguar':
-            renderModel(JaguarModels)
+            renderModel(JaguarModels);
             break; 
             default:
-                console.log('done');
+                sumPrice += Number(brand.options[indexOfChosen].value);
     }
+}
+
+const onOldClick = () => {
+    document.getElementById('owner').className = 'visible';
+}
+
+const onNewClick = () => {
+    document.getElementById('owner').className = 'invisible';
+}
+
+const onCount = () => {
+    const brandPrice = Number(brand.value);
+
+
+
 }
