@@ -31,7 +31,7 @@ const renderModel = (array) => {
 const onBrandChange = () => {
     const indexOfChosen = brand.selectedIndex;
     const chosenBrand = brand.options[indexOfChosen].innerText;
-    const brandSum = 0;
+    let brandSum = 0;
     switch (chosenBrand) {
         case 'Renault':
             renderModel(RenaultModels);
@@ -39,15 +39,18 @@ const onBrandChange = () => {
             break;
         case 'Opel':
             renderModel(OpelModels);
+            brandSum = Number(brand.options[indexOfChosen].value);
             break;  
         case 'Mazda':
             renderModel(MazdaModels);
+            brandSum = Number(brand.options[indexOfChosen].value);
             break; 
         case 'Jaguar':
             renderModel(JaguarModels);
+            brandSum = Number(brand.options[indexOfChosen].value);
             break; 
             default:
-                sumPrice += Number(brand.options[indexOfChosen].value);
+                sumPrice += brandSum;
     }
 }
 
@@ -59,9 +62,15 @@ const onNewClick = () => {
     document.getElementById('owner').className = 'invisible';
 }
 
+const onModelChange = () => {
+    const model = document.getElementById('model');
+    const indexchosenModel = model.selectedIndex;
+    const modelPrice = model.options[indexchosenModel].value;
+    sumPrice += Number()
+}
+
 const onCount = () => {
     const brandPrice = Number(brand.value);
-
-
-
 }
+
+
