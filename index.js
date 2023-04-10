@@ -66,7 +66,7 @@ const onModelChange = () => {
     const model = document.getElementById('model');
     const indexchosenModel = model.selectedIndex;
     const modelPrice = model.options[indexchosenModel].value;
-    sumPrice += Number()
+    sumPrice += Number(modelPrice);
 }
 
 const onCount = () => {
