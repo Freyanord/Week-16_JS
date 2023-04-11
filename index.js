@@ -73,4 +73,10 @@ const onCount = () => {
     const brandPrice = Number(brand.value);
 }
 
-
+const onFuelChose = () => {
+    const fuels = Array.from(document.getElementById('fuel').children);
+    const chosenFuel = fuels.filter((fuel)=> {
+        return fuel.checked === true;
+    })
+    sumPrice += Number(chosenFuel[0].value);
+}
